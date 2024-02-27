@@ -1,0 +1,74 @@
+/*Animated clock*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #fdebd0;
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    font-weight: 200;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 2% auto;
+    max-width: 1200px;
+    width:75vw;
+}
+ 
+
+.clock{
+    width: 500px;
+    height: 500px;
+    border: 3px solid #1abc9c;
+    border-radius: 50%;
+}
+
+.hourhand, .minutehand{
+    position:relative;
+    border: 2px solid #1abc9c;
+    transform-origin: center bottom; /*точка вращения (на конце стрелок)*/
+    animation-iteration-count: infinite; /*бесконечность движения*/
+    animation-timing-function: linear; /*плавность анимации*/
+}
+
+.hourhand{
+    width: 0.5px;
+    height: 200px;
+    top: 49px;
+    left:246px;
+    animation-name:hour;/*имя анимации*/
+    animation-duration: 60s;/*время выполенния движения*/
+}
+
+@keyframes hour {
+    from{transform: rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.minutehand{
+    width: 0.5px;
+    height: 250px;
+    top: -203px;
+    left:246px;
+    animation-name:minute; /*имя анимации*/
+    animation-duration: 10s; /*время выполенния движения*/
+}
+
+@keyframes minute {
+    from{transform: rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+ 
+
+
