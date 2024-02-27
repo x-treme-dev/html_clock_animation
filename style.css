@@ -27,7 +27,18 @@ body{
     border-radius: 50%;
 }
 
-.hourhand, .minutehand{
+.clock__center{
+    width: 15px;
+    height: 15px;
+    background-color: #1abc9c;
+    border-radius: 50%;
+    position: relative;
+    top:244px;
+    left:240px;
+    z-index: -10;
+}
+
+.clock__hourhand, .clock__minutehand{
     position:relative;
     border: 2px solid #1abc9c;
     transform-origin: center bottom; /*точка вращения (на конце стрелок)*/
@@ -35,13 +46,14 @@ body{
     animation-timing-function: linear; /*плавность анимации*/
 }
 
-.hourhand{
+.clock__hourhand{
     width: 0.5px;
     height: 200px;
-    top: 49px;
+    top: 37px;
     left:246px;
     animation-name:hour;/*имя анимации*/
     animation-duration: 60s;/*время выполенния движения*/
+    z-index: -2;
 }
 
 @keyframes hour {
@@ -52,13 +64,14 @@ body{
     }
 }
 
-.minutehand{
+.clock__minutehand{
     width: 0.5px;
     height: 250px;
-    top: -203px;
-    left:246px;
+    top:-217px;
+    left:245px;
     animation-name:minute; /*имя анимации*/
     animation-duration: 10s; /*время выполенния движения*/
+    z-index:-1;
 }
 
 @keyframes minute {
